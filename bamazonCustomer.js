@@ -50,7 +50,6 @@ function showItems() {
         productId.push(result[i].id.toString() + ") " + result[i].product_name);
         stockQty[result[i].id] = (result[i].stock_qty);
         }
-       
         inquirer.prompt([
             {
                 type: "list",
@@ -71,7 +70,8 @@ function showItems() {
             }    
 
         ]).then(function(data){
-            if(data.count > stockQty[data.purchase[0]] || stockQty[data.purchase[0]] == 0 ){
+            var itemId = data.purchase.split(")")[0];
+            if(data.count > stockQty[itemId] || stockQty[itemId] == 0 ){
                 console.log("\nInsufficient Quantity!".red + "\n");
                 setTimeout (function(){
                     start();
@@ -80,10 +80,10 @@ function showItems() {
                     connection.query("UPDATE products SET ? WHERE ?",
                 [
                     {
-                        stock_qty: stockQty[data.purchase[0]] - data.count 
+                        stock_qty: stockQty[parseInt(itemId)] - parseInt(data.count)
                     },
                     {
-                        id: data.purchase[0]
+                        id: itemId
                     }
                 ]);
                 console.log("\nPurchase Complete!".green + "\n");

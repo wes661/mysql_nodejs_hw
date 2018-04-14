@@ -176,14 +176,14 @@ function addQty() {
             }    
 
         ]).then(function(data){
-            
+            var itemId = data.item.split(")")[0];
             connection.query("UPDATE products SET ? WHERE ?",
                 [
                     {
-                        stock_qty: stockQty[parseInt(data.item[0])] += parseInt(data.count) 
+                        stock_qty: stockQty[parseInt(itemId)] += parseInt(data.count) 
                     },
                     {
-                        id: data.item[0]
+                        id: itemId
                     }
                 ]);
                 console.log("\nQuantity Updated!".green + "\n");
