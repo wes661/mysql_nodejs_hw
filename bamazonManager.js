@@ -180,7 +180,7 @@ function addQty() {
             connection.query("UPDATE products SET ? WHERE ?",
                 [
                     {
-                        stock_qty: stockQty[data.item[0]] += data.count 
+                        stock_qty: stockQty[parseInt(data.item[0])] += parseInt(data.count) 
                     },
                     {
                         id: data.item[0]
