@@ -79,7 +79,7 @@ function showItems() {
     connection.query( query , function (err, result, fields){
         if (err) throw err;
         for(i = 0; i < result.length; i++){
-        console.log("\n" + colors.green(result[i].id) + ") " + "Item: ".yellow + result[i].product_name  + "\n    Department: ".yellow + result[i].department + "\n    Price: ".yellow + "$"+ result[i].price + "\n    Stock: ".yellow +  result[i].stock_qty + "\n-------------------".blue);
+        console.log("\n" + colors.green(result[i].id) + ") " + "Item: ".yellow + result[i].product_name  + "  |".blue + "    Department: ".yellow + result[i].department + "  |".blue + "    Price: ".yellow + "$"+ result[i].price + "  |".blue + "    Stock: ".yellow +  result[i].stock_qty + "\n------------------------------------".blue);
         }
     })
 }
@@ -139,7 +139,7 @@ function lowInventory() {
         if (err) throw err;
         for(i = 0; i < result.length; i++){
             if(result[i].stock_qty < 5){
-                console.log("\n" + colors.green(result[i].id) + ") " + "Item: ".yellow + result[i].product_name  + "\n    Department: ".yellow + result[i].department + "\n    Price: ".yellow + "$"+ result[i].price + "\n    Stock: ".red +  result[i].stock_qty + "\n-------------------".blue);
+                console.log("\n" + colors.green(result[i].id) + ") " + "Item: ".yellow + result[i].product_name  + "  |".blue + "    Department: ".yellow + result[i].department + "  |".blue + "  Price: ".yellow + "$"+ result[i].price + "  |".blue + "    Stock: ".red +  result[i].stock_qty + "\n------------------------------------".blue);
             }    
         }
     })

@@ -46,7 +46,7 @@ function showItems() {
         var productId = [];
         var stockQty = {};
         for(i = 0; i < result.length; i++){
-        console.log("\n" + colors.green(result[i].id) + ") " + "Item: ".yellow + result[i].product_name  + "\n    Department: ".yellow + result[i].department + "\n    Price: ".yellow + "$"+ result[i].price + "\n    Stock: ".yellow +  result[i].stock_qty + "\n-------------------".blue);
+        console.log("\n" + colors.green(result[i].id) + ") " + "Item: ".yellow + result[i].product_name  + "  |".blue + "    Department: ".yellow + result[i].department + "  |".blue + "    Price: ".yellow + "$"+ result[i].price + "  |".blue + "    Stock: ".yellow +  result[i].stock_qty + "\n------------------------------------".blue);
         productId.push(result[i].id.toString() + ") " + result[i].product_name);
         stockQty[result[i].id] = (result[i].stock_qty);
         }
