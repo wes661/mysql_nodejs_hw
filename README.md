@@ -16,6 +16,9 @@ Prompt asking which item the user would like to purchase
 Selecting item to buy and quantity with transaction feedback
 ![Alt text](assets/images/05customerscreenshot.png?raw=true "Title")
 
+If user inputs a quantity that is greater than whats in stock or if stock is 0 'Insufficient Quantity' is returned 
+![Alt text](assets/images/02customerscreenshot.png?raw=true "Title")
+
 Updated quantity in database after purchase
 ![Alt text](assets/images/06customerscreenshot.png?raw=true "Title")
 
