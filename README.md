@@ -1,26 +1,38 @@
 
 
 # Node.js & MySQL
+Mysql Data base used for bamazon app
 ![Alt text](assets/images/01mysqlscreenshot.png?raw=true "Title")
 
+Begining prompt in bamazonCustomer.js to view products
 ![Alt text](assets/images/01customerscreenshot.png?raw=true "Title")
 
+Display of all products in the data base
 ![Alt text](assets/images/03customerscreenshot.png?raw=true "Title")
 
+Prompt asking which item you'd like to purchase
 ![Alt text](assets/images/04customerscreenshot.png?raw=true "Title")
 
+Selecting item to buy and quantity with transaction feedback
 ![Alt text](assets/images/05customerscreenshot.png?raw=true "Title")
 
+Updated quantity in data base after purchase
 ![Alt text](assets/images/06customerscreenshot.png?raw=true "Title")
 
+
+Begining prompt in bamazonManager.js with list of actions to select
 ![Alt text](assets/images/001managerscreenshot.png?raw=true "Title")
 
+View products shows available products in data base
 ![Alt text](assets/images/01managerscreenshot.png?raw=true "Title")
 
+View low inventory shows items in data base with quantity less than 5
 ![Alt text](assets/images/02managerscreenshot.png?raw=true "Title")
 
+Add to inventory lets the manager add stock quatity to items in the data base
 ![Alt text](assets/images/03managerscreenshot.png?raw=true "Title")
 
+Add to inventory prompts which item to add stock to, by how much, and then returns feed back of 'Quantity Updated'
 ![Alt text](assets/images/04managerscreenshot.png?raw=true "Title")
 
 ![Alt text](assets/images/05managerscreenshot.png?raw=true "Title")
