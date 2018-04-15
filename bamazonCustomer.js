@@ -11,11 +11,13 @@ var connection = mysql.createConnection({
     password: "root",
     database: "bamazon_DB"
 });
+//variable for querying proper info from database, variable is set based on user selection from initial prompt
 var query;
    
 
 start();
 
+//Function that starts bamazon customer app
 function start(){
     inquirer.prompt({
         type: "list",
@@ -39,6 +41,7 @@ function start(){
     }) 
 }       
 
+//Function that displays products based on users selection
 function showItems() {
     
     connection.query( query , function (err, result, fields) {
@@ -47,7 +50,9 @@ function showItems() {
         var stockQty = {};
         for(i = 0; i < result.length; i++){
         console.log("\n" + colors.green(result[i].id) + ") " + "Item: ".yellow + result[i].product_name  + "  |".blue + "    Department: ".yellow + result[i].department + "  |".blue + "    Price: ".yellow + "$"+ result[i].price + "  |".blue + "    Stock: ".yellow +  result[i].stock_qty + "\n------------------------------------".blue);
+        //Adding product Id to blank array to be populated to 'choices'//
         productId.push(result[i].id.toString() + ") " + result[i].product_name);
+        //Populating stockQty object with the stock_qty from the id of the item selected for purchasing. To be referenced for updating the stock_qty in the database//
         stockQty[result[i].id] = (result[i].stock_qty);
         }
         inquirer.prompt([

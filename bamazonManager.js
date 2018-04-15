@@ -15,6 +15,7 @@ var query;
 
 start();
 
+//Function to start bamazon manager app, holds switch case function for the different options for user to choose
 function start(){
     inquirer.prompt({
         type: "list",
@@ -75,6 +76,7 @@ function start(){
     }) 
 }
 
+//Function to displays all items in database
 function showItems() {
     connection.query( query , function (err, result, fields){
         if (err) throw err;
@@ -84,6 +86,7 @@ function showItems() {
     })
 }
 
+//Function for user to add item to database
 function addItem() {
     inquirer.prompt(
     [
@@ -134,6 +137,7 @@ function addItem() {
     })
 }
 
+//Function for user to view items in database that have a quantity less than 5
 function lowInventory() {
     connection.query( query, function (err, result, fields){
         if (err) throw err;
@@ -145,6 +149,7 @@ function lowInventory() {
     })
 }
 
+//Function for user to add stock quantity to product in the database
 function addQty() {
     
     connection.query( query , function (err, result, fields) {
