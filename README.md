@@ -39,14 +39,10 @@ Updated quantity in database
 ![Alt text](assets/images/05managerscreenshot.png?raw=true "Title")
 
 Add new product lets manager add new items to database.
-
--Product name
-
--Department
-
--Price
-
--Quantity
+    -Product name
+    -Department
+    -Price
+    -Quantity
 ![Alt text](assets/images/06managerscreenshot.png?raw=true "Title")
 
 Updated database with new item
